@@ -1,4 +1,10 @@
-Here is a sample `README.md` file for your project:
+---
+layout: default
+title: UI Components
+nav_order: 2
+has_children: true
+has_toc: true
+---
 
 # Course Scheduler
 

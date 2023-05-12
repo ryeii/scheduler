@@ -4,7 +4,7 @@
 
 This is a simple course scheduling application built with Flask and pandas. Given the availability of courses and the preferences of each student, the app generates all valid class schedules that fits the preferences of the student. [Code](https://github.com/ryeii/scheduler)
 
-In the ideal case, for a schedule job with $n$ time slots, this app's time complexity is less than $O(n!)$. Click [here](https://github.com/ryeii/scheduler/course_scheduler.pdf) for a simple explaination and see if your job belongs to the ideal case.
+In the ideal case, for a schedule job with $n$ time slots, this app's time complexity is less than $O(n!)$. Click [here](/course_scheduler.pdf) for a simple explaination and see if your job belongs to the ideal case.
 
 ## Getting Started
 

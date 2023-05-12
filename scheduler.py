@@ -30,6 +30,12 @@ class Scheduler:
             for _, row in student_preferences.iterrows():
                 student = row[0]
                 classes = row[1:]
+
+                # if len of classes not equal to len col of timeslots, add the student to list_failed and skip to next student
+                if (len(classes) != len(timeslots.columns)) or (not all([class_name in class_to_slots for class_name in classes])):
+                    list_failed.append(student)
+                    continue
+
                 valid_schedules[student] = []
 
                 # Compute the Cartesian product of the available slots for the chosen classes

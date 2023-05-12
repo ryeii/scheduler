@@ -1,5 +1,7 @@
 # Course Scheduler
 
+![](imgs/teaser.png)
+
 ## Introduction
 
 This is a simple course scheduling application built with Flask and pandas. Given the availability of courses and the preferences of each student, the app generates all valid class schedules that fits the preferences of the student. [Code](https://github.com/ryeii/scheduler)
@@ -108,6 +110,10 @@ Once you have prepared your input document, navigate to the app in your preferre
 Click choose file, choose your input file, then click `Schedule!`
 
 The program will start to run as soon as you click the button. Once all students are scheduled, you can see a summary showing the percentage of students successfully scheduled in the Log Content below. You can also download the result schedule by clicking the `Download Schedule` button. A copy of your uploaded file corresponding to the output will also be saved in the app folder, which you can download by `Download Last Input File`.
+
+Exmaple output:
+
+![](imgs/example_result.png)
 
 If you uploaded a file that wasn't in the correct format, you will see a error page. You may go back to the home page, modify your file, and try again.
 

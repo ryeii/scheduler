@@ -6,6 +6,8 @@ Here is a sample `README.md` file for your project:
 
 This is a simple course scheduling application built with Flask and pandas. Given the availability of courses and the preferences of each student, the app generates all valid class schedules that fits the preferences of the student. [Code](https://github.com/ryeii/scheduler)
 
+In the ideal case, for a schedule job with $n$ time slots, this app's time complexity is less than $O(n!)$. Click [here](https://github.com/ryeii/scheduler/course_scheduler.pdf) for a simple explaination and see if your job belongs to the ideal case.
+
 ## Getting Started
 
 ### Prerequisites
@@ -47,7 +49,7 @@ To run the application, execute the following command in your terminal:
 python app.py
 ```
 
-The application will start running on your local machine. You can access the application by opening a web browser and navigating to `localhost:5000`.
+The application will start running on your local machine. You can access the application by opening a web browser and navigating to `http://127.0.0.1:5000/`, or the address shown in your console.
 
 ## Prepare the Input File
 
@@ -98,5 +100,21 @@ Please make sure:
 Example:
 
 ![imgs/example_student_preferences.png](imgs/example_student_preferences.png)
+
+## Usage
+
+Once you have prepared your input document, navigate to the app in your preferred browser and you should see
+
+![](imgs/example_home.png)
+
+Click choose file, choose your input file, then click `Schedule!`
+
+The program will start to run as soon as you click the button. Once all students are scheduled, you can see a summary showing the percentage of students successfully scheduled in the Log Content below. You can also download the result schedule by clicking the `Download Schedule` button. A copy of your uploaded file corresponding to the output will also be saved in the app folder, which you can download by `Download Last Input File`.
+
+If you uploaded a file that wasn't in the correct format, you will see a error page. You may go back to the home page, modify your file, and try again.
+
+If you uploaded a file that was accepted, the old input file will be erased.
+
+If there are multiple schedules for one student, the result will contain all possible schedules. The student will have multiple rows in the result file.
 
 Happy Scheduling!

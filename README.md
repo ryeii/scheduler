@@ -53,7 +53,7 @@ The application will start running on your local machine. You can access the app
 
 ## Prepare the Input File
 
-Please checkout this [example](https://github.com/ryeii/scheduler/example_input.xlsx) input file. The input should be a xlsx file consists of two sheets:
+Please checkout this [example](/example_input.xlsx) input file. The input should be a xlsx file consists of two sheets:
 
 - timeslots
 - student preferences

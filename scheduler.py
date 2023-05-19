@@ -1,6 +1,6 @@
 import pandas as pd
 from collections import defaultdict
-from itertools import product
+from itertools import product, combinations
 import os
 
 class Scheduler:
@@ -10,11 +10,35 @@ class Scheduler:
     def get_data(self):
         df = pd.read_excel(self.path, sheet_name=['timeslots', 'student preferences'])
         return df.get('timeslots'), df.get('student preferences')
+    
+    def preprocess(self):
+        '''
+        This preprocess is implemented specifically for Beijing Aidi School and may not be applicable to other schools.
+        '''
+        timeslots, student_preferences = self.get_data()
+
+        # create new dataframe student_preferences_processed
+        student_preferences_processed = pd.DataFrame(columns=['Student name', 'Fixed class 1', 'Fixed class 2', 
+                                                              'Fixed class 3', 'Fixed class 4', 'Elective 1', 
+                                                              'Elective 2', 'Elective 3', ])
+
+        # for each row of the student preferences, if the number of classes is larger than the number of timeslots
+        for _, row in student_preferences.iterrows():
+            electives = row[5:].dropna()
+            fixed = row[1:5].dropna()
+            name = row[0]
+            # for each combinations of three classes in electives, create a new row with the same fixed classes and the combination of three classes. the combinations are without repetition.
+            for combination in combinations(electives, 3):
+                    student_preferences_processed.loc[len(student_preferences_processed)] = [name, *fixed, *combination]
+        
+        return timeslots, student_preferences_processed
+                
 
     def schedule(self, save_path='result.xlsx'):
 
         try:
-            timeslots, student_preferences = self.get_data()
+            print('Scheduling...')
+            timeslots, student_preferences = self.preprocess()
 
             # Create a dictionary to map classes to their available slots
             class_to_slots = {}
@@ -31,12 +55,13 @@ class Scheduler:
                 student = row[0]
                 classes = row[1:]
 
-                # if len of classes not equal to len col of timeslots, add the student to list_failed and skip to next student
-                if (len(classes) != len(timeslots.columns)) or (not all([class_name in class_to_slots for class_name in classes])):
+                # if len of classes is smaller than len col of timeslots, add the student to list_failed and skip to next student
+                if (len(classes) < len(timeslots.columns)) or (not all([class_name in class_to_slots for class_name in classes])):
                     list_failed.append(student)
                     continue
 
-                valid_schedules[student] = []
+                if student not in valid_schedules:
+                    valid_schedules[student] = []
 
                 # Compute the Cartesian product of the available slots for the chosen classes
                 class_combinations = list(product(*[class_to_slots[class_name] for class_name in classes]))
@@ -46,7 +71,7 @@ class Scheduler:
                 if unique_combinations:
                     for combination in unique_combinations:
                         valid_schedules[student].append([f'{class_name} (slot {slot})' for class_name, slot in zip(classes, combination)])
-                if not valid_schedules[student]:
+                if (not valid_schedules[student]) and (student not in list_failed):
                     list_failed.append(student)
 
 
@@ -85,3 +110,7 @@ class Scheduler:
             f.write(f'~ List of classes = {list(class_to_slots.keys())}\n')
         
         return True
+
+
+s = Scheduler('example_input.xlsx')
+s.schedule()

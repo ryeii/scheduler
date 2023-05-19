@@ -1,2 +1,24 @@
 
-no log yet
+~ Schedule created for example_input.xlsx
+###   Schedule Log   #############################################################
+~ Number of students: 15
+~ Number of students with valid schedule(s): 14
+~ Percentage of students with valid schedule(s): 93.33333333333333%
+Result saved.
+###   Info Dump   ################################################################
+~ Dataframe: 
+  Student name            course 1           course 2            course 3           course 4           course 5           course 6           course 7
+0        alice    toefl 1 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)    ap geo (slot 5)       pe1 (slot 6)    ap che (slot 7)
+1        alice    toefl 1 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)    ap geo (slot 5)    ap che (slot 7)       bio (slot 6)
+2        alice    toefl 1 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)       pe1 (slot 6)    ap che (slot 7)       psy (slot 5)
+3        alice    toefl 1 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)       pe1 (slot 6)    ap che (slot 7)       bio (slot 5)
+4        alice    toefl 1 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)    ap che (slot 7)       psy (slot 5)       bio (slot 6)
+5          bob  algebra 2 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)    ap geo (slot 5)       pe1 (slot 6)    ap che (slot 7)
+6          bob  algebra 2 (slot 2)     E 500 (slot 1)  algebra 1 (slot 3)    ap phy (slot 4)    ap geo (slot 5)       pe1 (slot 6)    ap che (slot 7)
+7          bob  algebra 2 (slot 1)     E 500 (slot 2)  algebra 1 (slot 3)    ap phy (slot 4)       pe1 (slot 6)    ap che (slot 7)       psy (slot 5)
+8          bob  algebra 2 (slot 2)     E 500 (slot 1)  algebra 1 (slot 3)    ap phy (slot 4)       pe1 (slot 6)    ap che (slot 7)       psy (slot 5)
+9          eve   No valid schedule  No valid schedule   No valid schedule  No valid schedule  No valid schedule  No valid schedule  No valid schedule
+###   Debug Info   ###############################################################
+~ Timeslot No. = 7
+~ Number of classes = 10
+~ List of classes = ['toefl 1', 'algebra 2', 'E 500', 'algebra 1', 'ap phy', 'psy', 'ap geo', 'bio', 'pe1', 'ap che']

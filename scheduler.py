@@ -97,9 +97,11 @@ class Scheduler:
             f.write('\n')
             f.write(f'~ Schedule created for {self.path}\n')
             f.write(f'###   Schedule Log   #############################################################\n')
-            f.write(f'~ Number of students: {len(student_preferences)}\n')
-            f.write(f'~ Number of students with valid schedule(s): {len(student_preferences) - len(list_failed)}\n')
-            f.write(f'~ Percentage of students with valid schedule(s): {100 - len(list_failed)/len(student_preferences)*100}%\n')
+            # names = set of names in student_preferences
+            success_names = set(student_preferences['Student name'])
+            f.write(f'~ Number of students: {len(success_names)}\n')
+            f.write(f'~ Number of students with valid schedule(s): {len(success_names) - len(set(list_failed))}\n')
+            f.write(f'~ Percentage of students with valid schedule(s): {100 - len(set(list_failed))/len(success_names)*100}%\n')
             f.write('Result saved.\n')
             f.write(f'###   Info Dump   ################################################################\n')
             # write df

@@ -26,7 +26,7 @@ def home():
     if not os.listdir(UPLOAD_FOLDER):
         message = 'No file uploaded yet. Please upload a file to start.'
     else:
-        message = 'There is a schedule file in the system. 1. check the log below for its schedule result. 2. upload a new file to start a new schedule (erase the existing file).'
+        message = 'Scheduling Succeeded! 1. check the log below for its schedule result. 2. upload a new file to start a new schedule (erase the existing file).'
 
     return render_template('index.html', log_content=log_content, message=message)
 

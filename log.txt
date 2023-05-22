@@ -1,9 +1,9 @@
 
 ~ Schedule created for example_input.xlsx
 ###   Schedule Log   #############################################################
-~ Number of students: 15
-~ Number of students with valid schedule(s): 14
-~ Percentage of students with valid schedule(s): 93.33333333333333%
+~ Number of students: 3
+~ Number of students with valid schedule(s): 2
+~ Percentage of students with valid schedule(s): 66.66666666666667%
 Result saved.
 ###   Info Dump   ################################################################
 ~ Dataframe: 

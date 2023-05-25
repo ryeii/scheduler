@@ -73,4 +73,4 @@ def download_input():
     return send_file(UPLOAD_FOLDER+'course_scheduling.xlsx', as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

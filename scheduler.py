@@ -73,7 +73,10 @@ class Scheduler:
                         valid_schedules[student].append([f'{class_name} (slot {slot})' for class_name, slot in zip(classes, combination)])
                 if (not valid_schedules[student]) and (student not in list_failed):
                     list_failed.append(student)
-
+                
+                # if there is an entry in valid_schedules for the student, take down all names of this student in list_failed
+                if valid_schedules[student] and (student in list_failed):
+                    list_failed.remove(student)
 
             # Create a dataframe to save the results
             df = pd.DataFrame(columns=['Student name', *[f'course {i+1}' for i in range(len(timeslots.columns))]])
@@ -112,7 +115,3 @@ class Scheduler:
             f.write(f'~ List of classes = {list(class_to_slots.keys())}\n')
         
         return True
-
-
-s = Scheduler('example_input.xlsx')
-s.schedule()

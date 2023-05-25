@@ -76,7 +76,8 @@ class Scheduler:
                 
                 # if there is an entry in valid_schedules for the student, take down all names of this student in list_failed
                 if valid_schedules[student] and (student in list_failed):
-                    list_failed.remove(student)
+                    while student in list_failed:
+                        list_failed.remove(student)
 
             # Create a dataframe to save the results
             df = pd.DataFrame(columns=['Student name', *[f'course {i+1}' for i in range(len(timeslots.columns))]])

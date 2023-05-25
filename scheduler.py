@@ -17,6 +17,8 @@ class Scheduler:
         '''
         timeslots, student_preferences = self.get_data()
 
+        print('Preprocessing...')
+
         # create new dataframe student_preferences_processed
         student_preferences_processed = pd.DataFrame(columns=['Student name', 'Fixed class 1', 'Fixed class 2', 
                                                               'Fixed class 3', 'Fixed class 4', 'Elective 1', 
@@ -30,6 +32,10 @@ class Scheduler:
             # for each combinations of three classes in electives, create a new row with the same fixed classes and the combination of three classes. the combinations are without repetition.
             for combination in combinations(electives, 3):
                     student_preferences_processed.loc[len(student_preferences_processed)] = [name, *fixed, *combination]
+            if len(electives) < 3:
+                student_preferences_processed.loc[len(student_preferences_processed)] = [name, *fixed, *electives, *[None for _ in range(3-len(electives))]]
+
+        print('Number of students after preprocessing: ', len(set(student_preferences_processed['Student name'])))
         
         return timeslots, student_preferences_processed
                 
@@ -91,6 +97,7 @@ class Scheduler:
             df.to_excel(save_path, index=False)
         
         except Exception as e:
+            print(e)
             with open('log.txt', 'w') as f:
                 f.write('\n')
                 f.write('no log yet\n')
@@ -101,7 +108,7 @@ class Scheduler:
             f.write('\n')
             f.write(f'~ Schedule created for {self.path}\n')
             f.write(f'###   Schedule Log   #############################################################\n')
-            # names = set of names in student_preferences
+            # names = names of all students
             success_names = set(student_preferences['Student name'])
             f.write(f'~ Number of students: {len(success_names)}\n')
             f.write(f'~ Number of students with valid schedule(s): {len(success_names) - len(set(list_failed))}\n')

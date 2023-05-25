@@ -1,2 +1,27 @@
 
-no result yet
+~ Schedule created for uploads/input.xlsx
+###   Schedule Log   #############################################################
+~ Number of students: 197
+~ Number of students with valid schedule(s): 149
+~ Percentage of students with valid schedule(s): 75.63451776649745%
+Result saved.
+###   Info Dump   ################################################################
+~ Dataframe: 
+     Student name                course 1                       course 2  ...            course 5                      course 6            course 7
+0             褚嘉钰  体育&Counseling (slot 7)  English Foundation 2 (slot 4)  ...  Economics (slot 3)  Advanced Studio Art (slot 5)  Chemistry (slot 6)
+1             褚嘉钰  体育&Counseling (slot 7)  English Foundation 2 (slot 4)  ...  Economics (slot 3)  Advanced Studio Art (slot 5)  Chemistry (slot 6)
+2             褚嘉钰  体育&Counseling (slot 7)  English Foundation 2 (slot 4)  ...  Economics (slot 1)  Advanced Studio Art (slot 5)  Chemistry (slot 6)
+3             褚嘉钰  体育&Counseling (slot 7)  English Foundation 2 (slot 4)  ...  Economics (slot 1)  Advanced Studio Art (slot 5)  Chemistry (slot 6)
+4             褚嘉钰  体育&Counseling (slot 6)  English Foundation 2 (slot 4)  ...  Economics (slot 3)  Advanced Studio Art (slot 5)    Biology (slot 7)
+...           ...                     ...                            ...  ...                 ...                           ...                 ...
+2510          韩辛慧       No valid schedule              No valid schedule  ...   No valid schedule             No valid schedule   No valid schedule
+2511          周冠廷       No valid schedule              No valid schedule  ...   No valid schedule             No valid schedule   No valid schedule
+2512          王海翔       No valid schedule              No valid schedule  ...   No valid schedule             No valid schedule   No valid schedule
+2513           曹霖       No valid schedule              No valid schedule  ...   No valid schedule             No valid schedule   No valid schedule
+2514          柳嘉睿       No valid schedule              No valid schedule  ...   No valid schedule             No valid schedule   No valid schedule
+
+[2515 rows x 8 columns]
+###   Debug Info   ###############################################################
+~ Timeslot No. = 7
+~ Number of classes = 54
+~ List of classes = ['English 300', 'AP English Literature and Composition', 'TOEFL 2', 'English Foundation 1', 'English 100', 'Calculus', 'Statistics', 'Algebra II', 'Economics', 'World History', 'Biology', 'Studio Art', 'AP Physics C: Mechanics', 'AP European History', 'Independent Research', 'SAT 1', 'TOEFL 1', 'Algebra I', 'Pre-Calculus', 'AP Computer Science Principles', 'Business', 'Physics', 'Chemistry', 'World Geography', 'AP Japanese', 'English Foundation 2', 'English 200', 'English 400', 'AP English Language and Composition', 'AP Pre-Calculus', 'AP Calculus', 'Psychology', 'Computer Application', 'AP Environmental Science', 'English 500', 'English Literature', 'AP Statistics', 'Digital Media Technology', 'AP Microeconomics', 'Advanced Performance Art', 'AP World History', 'AP Human Geography', 'SAT 2', 'AP Computer Science A', 'AP Chemistry', 'Advanced Studio Art', 'Japanese', 'AP Psychology', 'AP Biology', '体育&Counseling', 'AP Macroeconomics', 'Performance Art', 'Chinese Literature', 'AP Physics C: Electricity and Magnetism']
